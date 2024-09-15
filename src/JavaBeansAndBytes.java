@@ -19,6 +19,7 @@ public class JavaBeansAndBytes {
     }
 
     // Constructor for CoffeeShop
+    // constructor has the same name as the file and it has no return type
     public JavaBeansAndBytes() {
         name = "Java Beans & Bytes: The Code Café";
         isOpen = true;
@@ -32,62 +33,88 @@ public class JavaBeansAndBytes {
         }
         System.out.println("We were founded in " + yearFounded + ".");
 
-        // TODO
+        // DONE
         // Update the year founded and print the new yearFounded in a sentence
+        yearFounded = 1990;
+        System.out.println("We were founded in " + yearFounded + ".");
 
         // Calling methods
         randomDiscount();
-        // TODO
+        // DONE
         // Add parameter to specialOfTheDay (drink of your choice)
-        specialOfTheDay();
+        specialOfTheDay("Pumpkin Spice Latte");
         countCups();
         baristasChoice();
 
-        // TODO
+        // DONE
         // Create two CoffeeDrink objects
+        CoffeeDrink coffee1 = new CoffeeDrink(2, "Pumpkin", true);
+        CoffeeDrink coffee2 = new CoffeeDrink(1, "Mocha", false);
 
         // TODO
         // Print out the order details
+        System.out.println(coffee1);
+        System.out.println(coffee2);
 
 
     }
 
     // Method to generate a random discount
     public void randomDiscount() {
-        // TODO
+        // DONE
         // Make this method generate a random integer discount (0-30%)
+        int discount = (int)(Math.random()*30);
         // and print the result.
+        System.out.println("The discount is " + discount + "%!");
     }
 
     // Method with a parameter for the special of the day
-    public void specialOfTheDay() {
-        // TODO
+    public void specialOfTheDay(String special) {
+        // DONE
         // Make this method accept a parameter representing the day’s special.
         // Print the day's special.
+        System.out.println("Today's special is " + special + "!");
     }
 
     // Method to show loops
     public void countCups() {
         System.out.println("Counting cups sold today:");
 
-        // TODO
+        // DONE
         // Write three different for loops that print the indicated numbers:
 
         // Print 1 to 5
+        for(int i = 1; i <=5; i++) {
+            System.out.println(i);
+        }
 
 
         // Print 2, 5, 8, 11
-
+        for(int i = 2; i <= 11; i += 3) {
+            System.out.println(i);
+        }
 
         // Print 8 to 0
-
+        for(int i = 8; i >= 0; i--) {
+            System.out.println(i);
+        }
     }
 
     // Method to recommend a coffee based on a random number
     public void baristasChoice() {
-        // TODO
+        // DONE
         // Make this method generate a random decimal between 0 and 1
+        double drink = Math.random();
         // and print one of four drink recommendations based on its value.
+        if(drink < 0.25) {
+            System.out.println("I recommend a latte.");
+        } else if(0.25 <= drink && drink < 0.5) {
+            System.out.println("I recommend a frappuccino.");
+        } else if(0.5 <= drink && drink < 0.75) {
+            System.out.println("I recommend a expresso.");
+        } else {
+            System.out.println("I recommend a cappuccino.");
+        }
     }
 }
 
